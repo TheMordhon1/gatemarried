@@ -1139,12 +1139,27 @@ cbp-l-caption-body
     margin-bottom: 30px;
   }
 }
+@media (max-width: 575px) {
+  #pricing .block-pricing .table::nth-child(1) {
+    height: 500px;
+  }
+  #pricing .block-pricing .table:nth-child(2) {
+    height: 900px;
+  }
+  #pricing .block-pricing .table:nth-child(3) {
+    height: 500px;
+  }
+  #pricing .block-pricing .table:nth-child(4) {
+    height: 500px;
+  }
+}
 
 #pricing .block-pricing .table {
   margin-bottom: 0;
   padding: 30px 15px;
   max-width: 100%;
   width: 100%;
+  height: 1000px;
 }
 
 #pricing .block-pricing .table h4 {
