@@ -110,7 +110,7 @@ span {
   color: #fff;
   padding: 7px 12px 13px 12px;
   font-size: 16px;
-  border-radius: 2px;
+  border-radius: 20px;
   right: 15px;
   bottom: 15px;
   transition: background 0.5s;
@@ -179,8 +179,9 @@ span {
 #header.header-scrolled {
   background: #fff;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
+  padding: 20px 0;
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -224,8 +225,8 @@ span {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 50px;
+    line-height: 62px;
   }
 }
 
@@ -241,6 +242,11 @@ span {
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #hero img {
+    max-width: 50%;
     margin-bottom: 30px;
   }
 }
@@ -285,6 +291,11 @@ span {
 @media (max-width: 575px) {
   #hero .btns a {
     margin: 4px 8px;
+  }
+
+  #hero img {
+    max-width: 80%;
+    margin-bottom: 30px;
   }
 }
 
@@ -418,7 +429,7 @@ span {
 #mobile-nav-toggle {
   position: fixed;
   right: 0;
-  top: 0;
+  top: 17px;
   z-index: 999;
   margin: 4px 20px 0 0;
   border: 0;
@@ -698,7 +709,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 #about-us .about-content h2 {
   color: #252525;
   font-family: "roboto";
-  font-size: 39px;
+  font-size: 30px;
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 20px;
