@@ -180,6 +180,7 @@ span {
   background: #fff;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
   padding: 20px 0;
+  z-index: 100000000;
 }
 
 
@@ -439,11 +440,13 @@ span {
   transition: all 0.4s;
   outline: none;
   cursor: pointer;
+  z-index: 1000000000;
 }
 
 #mobile-nav-toggle i {
   color: #555;
   font-size: 24px;
+  
 }
 
 @media (max-width: 1024px) {
@@ -464,6 +467,7 @@ span {
   width: 260px;
   overflow-y: auto;
   transition: 0.4s;
+  z-index: 19999999999;
 }
 
 #mobile-nav ul {
