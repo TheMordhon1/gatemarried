@@ -199,12 +199,12 @@
 
   // init cubeportfolio
   gridContainer.cubeportfolio({
-    defaultFilter: '*',
+    defaultFilter: '.identity',
     animationType: 'rotateRoom',
-    gapHorizontal: 0,
+    gapHorizontal: 50,
     gapVertical: 0,
-    gridAdjustment: 'responsive',
-    caption: 'overlayBottomAlong',
+    gridAdjustment: 'alignCenter',
+    caption: 'revealTop',
     displayType: 'bottomToTop',
     displayTypeSpeed: 100,
 
