@@ -4,14 +4,15 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-html {
+/* html {
   overflow-x: hidden;
-}
+} */
 
 
 body {
   background-color: #fff;
   color: #333;
+  background-attachment: local;
 }
 
 /* Scrollbar */
@@ -905,6 +906,14 @@ body.mobile-nav-active #mobile-nav-toggle i {
   animation: none;
   border-radius: 0;
 }
+
+.row {
+  margin-right: 0px;
+}
+
+/* #video .row {
+  margin-right: 0;
+} */
 
 @-webkit-keyframes pulsate1 {
   0% {
