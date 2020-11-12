@@ -147,10 +147,7 @@
     });
   });
 
-  // Modal video
-  new ModalVideo('.js-modal-btn', {
-    channel: 'youtube'
-  });
+  
 
   // Init Owl Carousel
   $('.owl-carousel').owlCarousel({
@@ -192,6 +189,11 @@
   }
   $(window).on('load', function() {
     aos_init();
+
+    // Initiate venobox (lightbox feature used in portofilo)
+    $(document).ready(function() {
+      $('.venobox').venobox();
+    });
   });
 
   //Portfolio
