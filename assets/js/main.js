@@ -214,48 +214,53 @@
     });
   });
 
-  //Portfolio
-  var gridContainer = $('#grid-container'), filtersContainer = $('#filters-container');
+  // Filter
+  $(function() {
 
-  // init cubeportfolio
-  gridContainer.cubeportfolio({
-    defaultFilter: '.identity',
-    animationType: 'rotateRoom',
-    gapHorizontal: 50,
-    gapVertical: 0,
-    gridAdjustment: 'alignCenter',
-    caption: 'revealTop',
-    displayType: 'bottomToTop',
-    displayTypeSpeed: 100,
-
-    // lightbox
-    lightboxDelegate: '.cbp-lightbox',
-    lightboxGallery: true,
-    lightboxTitleSrc: 'data-title',
-    lightboxShowCounter: true,
-  });
-
-  // add listener for filters click
-  filtersContainer.on('click', '.cbp-filter-item', function(e) {
-    var me = $(this), wrap;
-
-    // get cubeportfolio data and check if is still animating (reposition) the items.
-    if (!$.data(gridContainer[0], 'cubeportfolio').isAnimating) {
-      if (filtersContainer.hasClass('cbp-l-filters-dropdown')) {
-        wrap = $('.cbp-l-filters-dropdownWrap');
-        wrap.find('.cbp-filter-item').removeClass('cbp-filter-item-active');
-        wrap.find('.cbp-l-filters-dropdownHeader').text(me.text());
-        me.addClass('cbp-filter-item-active');
-      } else {
-        me.addClass('cbp-filter-item-active').siblings().removeClass('cbp-filter-item-active');
-      }
-    }
-    // filter the items
-    gridContainer.cubeportfolio('filter', me.data('filter'), function() {});
-
-  });
-
-  // activate counter for filters
-  gridContainer.cubeportfolio('showCounter', filtersContainer.find('.cbp-filter-item'));
+    $(".filter-container").mixItUp();
+  
+    var inputText;
+    var $matching = $();
+  
+    // Delay function
+    var delay = (function(){
+      var timer = 0;
+      return function(callback, ms){
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+      };
+    })();
+  
+    $("#input").keyup(function(){
+      // Delay function invoked to make sure user stopped typing
+      delay(function(){
+        inputText = $("#input").val().toLowerCase();
+        
+        // Check to see if input field is empty
+        if ((inputText.length) > 0) {            
+          $( '.mix').each(function() {
+            $this = $("this");
+            
+             // add item to be filtered out if input text matches items inside the title   
+             if($(this).children('.title').text().toLowerCase().match(inputText)) {
+              $matching = $matching.add(this);
+            }
+            else {
+              // removes any previously matched item
+              $matching = $matching.not(this);
+            }
+          });
+          $(".filter-container").mixItUp('filter', $matching);
+        }
+  
+        else {
+          // resets the filter to show all item if input is empty
+          $(".filter-container").mixItUp('filter', 'all');
+        }
+      }, 200 );
+    });
+  })
+  
 
 })(jQuery);
+
