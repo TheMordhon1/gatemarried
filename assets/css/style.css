@@ -898,6 +898,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   display: block;
   position: relative;
   overflow: hidden;
+  outline: none;
 }
 
 #video .play-btn::after {
@@ -1196,6 +1197,12 @@ background-size: cover;
   box-shadow: 0 6px 20px rgba(17,26,104,.15);
 }
 
+#pricing .block-pricing ul {
+  list-style: outside none none;
+  max-width: 100%;
+  padding: 0;
+}
+
 #pricing .laris {
     position: relative;
 }
@@ -1238,7 +1245,7 @@ background-size: cover;
 
 #pricing .block-pricing ul {
   list-style: outside none none;
-  max-width: 240px;
+  max-width: 100%;
   padding: 0;
 }
 
