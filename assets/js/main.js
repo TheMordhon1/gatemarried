@@ -148,6 +148,10 @@
   });
 
   
+      // Facebook
+      function onClick() {
+        fbq('track', 'Purchase');
+      };
 
   // Init Owl Carousel
   $('.owl-carousel').owlCarousel({
