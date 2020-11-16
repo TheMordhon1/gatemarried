@@ -152,7 +152,6 @@
   // Init Owl Carousel
   $('.owl-carousel').owlCarousel({
     items: 4,
-    autoplay: true,
     loop: true,
     margin: 30,
     dots: true,
@@ -163,19 +162,23 @@
         items: 1
       },
       480: {
-        items: 2
+        items: 1
       },
       600: {
-        items: 2
+        items: 1
       },
       767: {
-        items: 3
+        items: 2
       },
       768: {
-        items: 3
+        items: 2
       },
       992: {
-        items: 4
+        items: 2
+      },
+
+      1200: {
+        items: 3
       }
     }
   });
@@ -188,6 +191,17 @@
     });
   }
   $(window).on('load', function() {
+    
+    // Preloader
+    $("#status").fadeOut();
+        $("#preloader")
+            .delay(500)
+            .fadeOut("slow");
+        $("body")
+            .delay(500)
+            .css({ overflow: "visible" });
+
+    // AOS Init
     aos_init();
 
     // Initiate venobox (lightbox feature used in portofilo)
