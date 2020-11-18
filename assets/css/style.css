@@ -1577,6 +1577,23 @@ body.mobile-nav-active #mobile-nav-toggle i {
   }
 }
 
+@media (max-width: 400px) {
+  
+  #about-us .about-content h2 {
+    font-size: 25px;
+  }
+
+  .mix {
+    margin-left: 20px;
+    margin-right: .5em;
+    width: 280px;
+  }
+  .mix img {
+    width: 400px;
+  }
+}
+
+
 
 
 
