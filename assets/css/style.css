@@ -95,10 +95,6 @@ a {
   color: #eaa794 ;
 }
 
-a:hover {
-  color: #92d283;
-}
-
 ul {
   letter-spacing: 1px;
 }
@@ -766,20 +762,17 @@ body.mobile-nav-active #mobile-nav-toggle i {
 /* About Us Section
 --------------------------------*/
 #about-us {
-  background: #c9a89f;
+  background: #f3f3f348;
 }
 
-#about-us img {
-  max-width: 100%;
-  height: 50%;
-}
+
 
 #about-us .about-content {
   padding-top: 60px;
 }
 
 #about-us .about-content h2 {
-  color: #fff;
+  color: #333;
   font-family: "roboto";
   font-size: 30px;
   font-weight: 100;
@@ -796,11 +789,11 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
 #about-us .about-content ul li {
   line-height: 36px;
-  color: #fff;
+  color: #333;
 }
 
 #about-us .about-content p {
-  color: #fff;
+  color: #505050;
 }
 
 #about-us .about-content ul li .fa {
@@ -1068,17 +1061,66 @@ body.mobile-nav-active #mobile-nav-toggle i {
   justify-content: center;
   align-items: center;
 }
+
+/* Eye Btn Demo */
+
+.mix .demo .eyebtn {
+  width: 84px;
+  height: 84px;
+  background: radial-gradient(#eaa794  50%, rgba(234, 167, 148, 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
+.mix .eyebtn .fa-eye {
+  position: absolute;
+  z-index: 9999;
+  color: #fff;
+  left: 31px;
+  bottom: 31px;
+  font-size: 1.5rem;
+}
+
+.mix .eyebtn::before {
+  content: '';
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation: pulsate-btn 2s;
+  animation: pulsate-btn 2s;
+  -webkit-animation-direction: forwards;
+  animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(234, 167, 148, 0.4);
+  top: -17%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+
+
+/* End Eye Btn Demo */
+
+/* Play Btn Demo */
 .mix .demo .play-btn {
   width: 84px;
   height: 84px;
   background: radial-gradient(#eaa794  50%, rgba(234, 167, 148, 0.4) 52%);
   border-radius: 50%;
   display: block;
-  position: relative;
   overflow: hidden;
   outline: none;
   position: absolute;
-  top: 80px;
 }
 
 .mix .play-btn::after {
@@ -1163,7 +1205,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
     opacity: 0;
   }
 }
-/* playdemo */
+/* End play btn demo */
 
 .mix p {
   margin-bottom: 5px;
@@ -1494,41 +1536,50 @@ body.mobile-nav-active #mobile-nav-toggle i {
   #newsletter .btn {
     width: 100%;
   }
+
+  #about-us img {
+    display: none;
+  }
+
+  .mix {
+    margin-left: 50px;
+    width: 300px;
+  }
+  .mix img {
+    width: 425px;
+  }
+}
+@media (max-width: 575px) {
+  #newsletter .btn {
+    width: 100%;
+  }
+
+  #about-us img {
+    display: none;
+  }
+
+  .mix {
+    margin-left: 50px;
+    width: 300px;
+  }
+  .mix img {
+    width: 425px;
+  }
+}
+@media (max-width: 420px) {
+  
+  .mix {
+    margin-left: 30px;
+    width: 300px;
+  }
+  .mix img {
+    width: 400px;
+  }
 }
 
-#newsletter .btn:hover {
-  background: #eaa794;
-}
 
-#newsletter .btn .fa {
-  padding-right: 10px;
-}
 
-#newsletter ul {
-  display: inline-block;
-  margin-top: 40px;
-  margin-bottom: 0;
-}
 
-#newsletter ul li {
-  background: #eaa794 ;
-  border-radius: 50px;
-  float: left;
-  height: 35px;
-  line-height: 35px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 35px;
-  transition: 0.3s;
-}
-
-#newsletter ul li:hover {
-  background: #eaa794;
-}
-
-#newsletter ul li .fa {
-  color: #fff;
-}
 
 /* Contact Section
 --------------------------------*/
@@ -1604,7 +1655,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 #contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: #eaa794c0;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1649,7 +1700,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 #contact .php-email-form button[type="submit"] {
-  background: #eaa794 ;
+  background: #eaa794af ;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1657,7 +1708,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 #contact .php-email-form button[type="submit"]:hover {
-  background: #92d283;
+  background: #eaa794;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1744,7 +1795,11 @@ body.mobile-nav-active #mobile-nav-toggle i {
   letter-spacing: 0;
 }
 
-.footer .copyrights p a, .footer .copyrights .credits a {
+.footer .copyrights  a {
   letter-spacing: 0;
   color: #eaa794 ;
+  text-decoration: none;
+}
+.footer .copyrights  a:hover {
+  border-bottom: 2px solid #eaa794;
 }
