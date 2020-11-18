@@ -255,7 +255,7 @@
   
         else {
           // resets the filter to show all item if input is empty
-          $(".filter-container").mixItUp('filter', 'all');
+          $(".filter-container").mixItUp('filter', 'web');
         }
       }, 200 );
     });
