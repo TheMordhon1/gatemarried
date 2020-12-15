@@ -1,4 +1,5 @@
 
+
 !(function($) {
   "use strict";
 
@@ -28,6 +29,26 @@
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
     return false;
+  });
+
+  $(window).on('load', function() {
+    
+    // Preloader
+    $("#status").fadeOut();
+        $("#preloader")
+            .delay(500)
+            .fadeOut("slow");
+        $("body")
+            .delay(500)
+            .css({ overflow: "visible" });
+
+    // AOS Init
+    aos_init();
+
+    // Initiate venobox (lightbox feature used in portofilo)
+    $(document).ready(function() {
+      $('.venobox').venobox();
+    });
   });
 
   // Initiate superfish on nav menu
@@ -153,39 +174,38 @@
         fbq('track', 'Purchase');
       };
 
-  // Init Owl Carousel
-  $('.owl-carousel').owlCarousel({
-    items: 4,
-    loop: true,
-    margin: 20,
-    dots: true,
-    responsiveClass: true,
-    responsive: {
 
-      320: {
-        items: 1
-      },
-      480: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      767: {
-        items: 2
-      },
-      768: {
-        items: 2
-      },
-      992: {
-        items: 2
-      },
-
-      1200: {
-        items: 3
-      }
-    }
-  });
+      jQuery("#carousel").owlCarousel({
+        autoplay: true,
+        lazyLoad: true,
+        loop: true,
+        margin: 40,
+        responsiveClass: true,
+        autoHeight: false,
+        autoplayTimeout: 7000,
+        smartSpeed: 800,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          795: {
+            items: 2
+          },
+    
+          900: {
+            items: 2
+          },
+      
+          1024: {
+            items: 3
+          },
+      
+          1366: {
+            items: 4
+          }
+        }
+      });
 
   // Init AOS
   function aos_init() {
@@ -194,27 +214,14 @@
       once: true
     });
   }
-  $(window).on('load', function() {
-    
-    // Preloader
-    $("#status").fadeOut();
-        $("#preloader")
-            .delay(500)
-            .fadeOut("slow");
-        $("body")
-            .delay(500)
-            .css({ overflow: "visible" });
-
-    // AOS Init
-    aos_init();
-
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
-      $('.venobox').venobox();
-    });
-  });
+  
 
   // Filter
+  $('.buttons .filter').on('click', function() {
+    $(".buttons .filter").removeClass('filter-active');
+    $(this).addClass('filter-active');
+  });
+
   $(function() {
 
     $(".filter-container").mixItUp();
